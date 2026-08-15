@@ -2,8 +2,10 @@
   {
     "name": "rtales.bin",
     "description": "Ragna Tales",
-    "hpAddress": "0x00E8E434",
-    "nameAddress": "0x00E90C00",
-    "mapAddress": "0x00E89BD4"
+    "hpAddress": "0x015874D0",
+    "nameAddress": "0x0158A120",
+    "mapAddress": "0x01583574",
+    "x_pos_offset": "0x0156FD4C",
+    "entity_list_offset": "0x00D9FE2C"
   }
 ]

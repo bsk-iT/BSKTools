@@ -7,15 +7,9 @@ namespace _4RTools.Utils
     [Flags]
     public enum EffectStatusIDs : uint
     {
-        COMPETITIVA = 5019,
-        //Status
-        QUAGMIRE = 8,
-        HALLUCINATIONWALK = 334,
-        HALLUCINATION = 34,
+        
         [Description("Provocar")]
         PROVOKE = 2015,
-        PROPERTYUNDEAD = 97,
-
         MISTY_FROST = 1141,
         OVERHEAT = 373,
         [Description("Vigor")]
@@ -23,7 +17,7 @@ namespace _4RTools.Utils
         PAINKILLER = 577,
         [Description("Rapidez com Lança")]
         SPEARQUICKEN = 68,
-
+        [Description("Transformação em Monstro")]
         MONSTER_TRANSFORM = 621,
         [Description("Prestígio Divino")]
         PRESTIGE = 402,
@@ -37,6 +31,7 @@ namespace _4RTools.Utils
         RINGNIBELUNGEN = 81,
         [Description("Milagre Solar, Lunar e Estelar")]
         MIRACLE= 2113,
+        [Description("Espírito")]
         SPIRIT = 1401,
         [Description("Calor Solar, Lunar, Estelar")]
         WARM = 165,
@@ -127,35 +122,44 @@ namespace _4RTools.Utils
         AURA_NINJA = 208,
         [Description("Troca de Pele")]
         PEEL_CHANGE = 206,
-        COMBAT_PILL = 662,
         [Description("Encantar Lâmina")]
         ENCHANT_BLADE = 316,
-        RWC_2011_SCROLL = 664,
         INFINITY_DRINK = 1065,
-        HP_INCREASE_POTION_LARGE = 480,
-        SP_INCREASE_POTION_LARGE = 481,
-        ENRICH_CELERMINE_JUICE = 484,
-        RED_HERB_ACTIVATOR = 1170,
-        BLUE_HERB_ACTIVATOR = 1171,
-        REF_T_POTION = 1169,
         OVERLAPEXPUP = 618,
+        [Description("Proteção Arcana")]
         PROTECTARMOR = 56,
-        CASH_PLUSEXP = 1400,
-        CASH_PLUSECLASSXP = 312,
-        CASH_RECEIVEITEM = 252,
+        [Description("Telecinesia")]
+        TELEKINESIS_INTENSE = 717,
+        [Description("Amplificação Mística")]
+        MYST_AMPLIFY = 113,
         [Description("Aceleração")]
         ACCELERATION = 361,
-        LIMIT_POWER_BOOSTER = 867,
         [Description("Ataque Gatling")]
         GATLINGFEVER = 204,
+        [Description("Assumptio")]
         ASSUMPTIO = 110,
         [Description("Proteção da Vanguarda")]
         FORCEOFVANGUARD = 391,
         [Description("Ilimitar")]
         UNLIMIT = 722,
+        [Description("Assovio")]
+        WHISTLE = 70,
+        [Description("Crepúsculo Sangrento")]
+        ASSASSINCROSS = 71,
         [Description("Poema de Bragi")]
         POEMBRAGI = 72,
+        [Description("Maçãs de Idun")]
         APPLEIDUN = 73,
+        [Description("Sibilo")]
+        HUMMING = 74,
+        [Description("Beijo da Sorte")]
+        FORTUNEKISS = 76,
+        [Description("Dança Cigana")]
+        SERVICEFORYOU = 77,
+        [Description("Holofote")]
+        SPOTLIGHT = 2226,
+        [Description("Dança com Lobos")]
+        DANCE_WITH_WUG = 441, 
         [Description("Sinfonia dos Ventos")]
         RUSH_WINDMILL = 442,
         [Description("Serenata ao Luar")]
@@ -206,9 +210,10 @@ namespace _4RTools.Utils
         RENOVATIO = 336,
         [Description("Distorção Arcana")]
         STASIS = 356,
+        [Description("Proteção Química Total")]
+        FULLPROTECTION = 2045,
         [Description("Bala Mágica")]
         MAGICAL_BULLET = 966,
-
         [Description("Justa")]
         JUSTA = 2189,
         [Description("Mestre dos Elementos")]
@@ -229,78 +234,6 @@ namespace _4RTools.Utils
         BLOOD_SUCKER_PLANT = 464,
         [Description("Projeção Espiritual")]
         SOUL_PROJECTION = 2193,
-
-
-        EDEN = 9999,
-
-        //ELEMENTAL CONVERTERS
-        [Description("Brisa Leve (Fogo)")]
-        PROPERTYFIRE = 90,
-        [Description("Brisa Leve (Água)")]
-        PROPERTYWATER = 91,
-        [Description("Brisa Leve (Vento)")]
-        PROPERTYWIND = 92,
-        [Description("Brisa Leve (Terra)")]
-        PROPERTYGROUND = 93,
-        [Description("Brisa Leve (Sombrio)")]
-        PROPERTYDARK = 146,
-        [Description("Brisa Leve (Fantasma)")]
-        PROPERTYTELEKINESIS = 148,
-        WEAPONPROPERTY = 64,
-        [Description("Brisa Leve (Sagrado)")]
-        ASPERSIO = 17,
-        [Description("Enlouquecedor")]
-        MINDBREAKER = 126,
-        [Description("Corrida")]
-        RUN = 145,
-
-
-        FULL_SWINGK = 486,
-        MANA_PLUS = 487,
-
-        //POTIONS
-        CONCENTRATION_POTION = 37,
-        AWAKENING_POTION = 38,
-        BERSERK_POTION = 39,
-        ASPDPOTIONINFINITY = 40,
-
-        //FOODS
-        FOOD_STR = 241,
-        FOOD_AGI = 242,
-        FOOD_VIT = 243,
-        FOOD_DEX = 244,
-        FOOD_INT = 245,
-        FOOD_LUK = 246,
-        FOOD_VIT_CASH = 273,
-        ACARAJE = 414,
-        STR_Biscuit_Stick = 2035,
-        VIT_Biscuit_Stick = 2036,
-        AGI_Biscuit_Stick = 2037,
-        INT_Biscuit_Stick = 2038,
-        DEX_Biscuit_Stick = 2039,
-        LUK_Biscuit_Stick = 2040,
-
-
-        REGENERATION_POTION = 292,
-
-        CRITICALPERCENT = 295,
-
-
-        //Boxes
-        DROWSINESS_BOX = 151,
-        RESENTMENT_BOX = 150,
-        SUNLIGHT_BOX = 184,
-
-        //Elemental Potions
-        RESIST_PROPERTY_WATER = 908,
-        RESIST_PROPERTY_GROUND = 909,
-        RESIST_PROPERTY_FIRE = 910,
-        RESIST_PROPERTY_WIND = 911,
-
-        BOX_OF_THUNDER = 289,
-        SPEED_POT = 41,
-
-        ENERGY_DRINK_RESERCH = 481,
         [Description("Maestria Arcana")]
         RECOGNIZEDSPELL = 355,
         [Description("Cambalhota")]
@@ -310,79 +243,10 @@ namespace _4RTools.Utils
         [Description("Imagem Falsa")]
         BUNSINJYUTSU = 207,
         TARGET_BLOOD = 301,
-
-        //Scrolls
-        [Description("Canto Candidus")]
-        INC_AGI = 12,
-        [Description("Clementia")]
-        BLESSING = 10,
-
-        //3RD foods
-        STR_3RD_FOOD = 491,
-        INT_3RD_FOOD = 492,
-        VIT_3RD_FOOD = 493,
-        DEX_3RD_FOOD = 494,
-        AGI_3RD_FOOD = 495,
-        LUK_3RD_FOOD = 496,
-
-        //Rune Knight Runes
-        //OTHILA = 322,
-        HAGALAZ = 320,
-        THURISAZ = 319,
-        LUX_AMINA = 1154,
-
-        [Description("Telecinesia")]
-        TELEKINESIS_INTENSE = 717,
-        [Description("Amplificação Mística")]
-        MYST_AMPLIFY = 113,
-
-        // DEBUFFS
-        CRITICALWOUND = 286,
-        FREEZING = 351,
-        CURSE = 884,
-        BLEEDING = 124,
-        SILENCE = 885,
-        DECREASE_AGI = 13,
-        CONFUSION = 886,
-        STUN = 877,
-        DEEP_SLEEP = 435,
-        POISON = 883,
-
-        SLOW_CAST = 282,
-        MANDRAGORA = 470,
-        BURNING = 881,
-
-        FEAR = 891,
-        BLIND = 887,
-
-        // pergaminhos cheffenia
-
-        GHOSTRING = 302,
-        ANGELING = 302,
-        TAO_GUNKA = 368,
-        SR_ORCS = 371,
-        ORC_HEROI = 370,
-        ABELHA = 369,
-
-        [Description("Dança com Lobos")]
-        DANCE_WITH_WUG = 441,
-        SIT = 622,
-
-        SPELLBREAKER = 300,
-        HALOHALO = 2011,
-        FLEE_SCROLL = 247,
-        ACCURACY_SCROLL = 248,
-        GLASS_OF_ILLUSION = 296,
-        MENTAL_POTION = 298,
-        VITATA_POTION = 483,
-        RIDDING = 613,
         [Description("Divina Providência")]
         PROVIDENCE = 61,
         [Description("União Solar, Lunar e Estelar")]
         FUSION = 2063,
-        BOVINE = 2068,
-        DRAGON = 2069,
-        RED_BOOSTER = 664,
         [Description("Bater em Retirada")]
         HOM_AVOID = 192,
         [Description("Kaupe")]
@@ -393,11 +257,273 @@ namespace _4RTools.Utils
         KAIZEL = 156,
         [Description("Kaahi")]
         KAAHI = 157,
-        ANTI_BOT = 5020,
         [Description("Espreitar")]
         CHASEWALK = 182,
+        [Description("Enlouquecedor")]
+        MINDBREAKER = 126,
+        [Description("Corrida")]
+        RUN = 145,
+        [Description("Arsenal")]
+        ARSENAL = 2242,
+        [Description("Rapsódia Improvisada")]
+        STAGE_HARMONY = 2075, // verificar o ID correto
+        [Description("Escudo de Fé")]
+        FAITH_SHIELD = 2220,
+        [Description("Poção da Fúria Química")]
+        CHEMICAL_FURY_POTION = 2235,
+        [Description("Benção do Devoto")]
+        BLESSING_DEVOTEE = 5034,
+        [Description("Modo Sennin")]
+        SENNIN_MODE = 2241,
+        [Description("Cólera do Dragão")]
+        DRAGONS_WRATH = 2238,
+        [Description("Ascensão Espiritual")]
+        SPIRITUAL_ASCENSION = 2240,
+        [Description("Furor")]
+        HEAT_BARREL = 759,
 
+
+        //ELEMENTAL CONVERTERS
+        [Description("Conversor Elemental Fogo")]
+        PROPERTYFIRE = 90,
+        [Description("Conversor Elemental Água")]
+        PROPERTYWATER = 91,
+        [Description("Conversor Elemental Vento")]
+        PROPERTYWIND = 92,
+        [Description("Conversor Elemental Terra")]
+        PROPERTYGROUND = 93,
+        [Description("Conversor Elemental Sombrio")]
+        PROPERTYDARK = 146,
+        [Description("Conversor Elemental Fantasma")]
+        PROPERTYTELEKINESIS = 148,
+        WEAPONPROPERTY = 64,
+        [Description("Conversor Elemental Sagrado")]
+        ASPERSIO = 17,
+        
+        
+        //POTIONS
+        [Description("Poção da Concentração")]
+        CONCENTRATION_POTION = 37,
+        [Description("Poção do Despertar")]
+        AWAKENING_POTION = 38,
+        [Description("Poção da Fúria Selvagem")]
+        BERSERK_POTION = 39,
+        [Description("Poção de Agilidade Dourada")]
+        ASPDPOTIONINFINITY = 40,
+        [Description("Elixir Rubro")]
+        RED_BOOSTER = 664,
+        [Description("Elixir Ultra Milagroso")]
+        ALMIGHTY = 9004,
+        [Description("Poção de Regeneração")]
+        REGENERATION_POTION = 292,
+        [Description("Abrasivo")]
+        CRITICALPERCENT = 295,
+        [Description("Bala de Guaraná")]
+        GUARANA = 9006,
+        [Description("Suco de Gato")]
+        SPELLBREAKER = 300,
+        [Description("Salada de Frutas Tropicais")]
+        HALOHALO = 2011,
+        GLASS_OF_ILLUSION = 296,
+        [Description("Poção Mental")]
+        MENTAL_POTION = 298,
+        [Description("Poção Vitata")]
+        VITATA_POTION = 483,
+        [Description("Poção do Bovino Furioso")]
+        BOVINE = 2068,
+        [Description("Poção do Dragão Místico")]
+        DRAGON = 2069,
+        [Description("Poção do Leviathan")]
+        LEVIATHAN = 2070,
+        [Description("Pílula de Combate")]
+        COMBAT_PILL = 662,
+        [Description("Poção Grande de HP")]
+        HP_INCREASE_POTION_LARGE = 480,
+        [Description("Poção Grande de SP")]
+        SP_INCREASE_POTION_LARGE = 481,
+        [Description("Suco Celular Enriquecido")]
+        ENRICH_CELERMINE_JUICE = 484,
+        [Description("Ativador de Erva Vermelha")]
+        RED_HERB_ACTIVATOR = 1170,
+        [Description("Ativador de Erva Azul")]
+        BLUE_HERB_ACTIVATOR = 1171,
+        [Description("Poção X Dourada")]
+        REF_T_POTION = 1169,
+        [Description("Super Poção Ilimitada")]
+        LIMIT_POWER_BOOSTER = 867,
+        [Description("Poção do Furor Físico")]
+        FULL_SWINGK = 486,
+        [Description("Poção do Furor Mágico")]
+        MANA_PLUS = 487,
+
+
+        //FOODS
+        FOOD_STR = 241,
+        FOOD_AGI = 242,
+        FOOD_VIT = 243,
+        FOOD_DEX = 244,
+        FOOD_INT = 245,
+        FOOD_LUK = 246,
+        FOOD_VIT_CASH = 273,
+        STR_Biscuit_Stick = 2035,
+        VIT_Biscuit_Stick = 2036,
+        AGI_Biscuit_Stick = 2037,
+        INT_Biscuit_Stick = 2038,
+        DEX_Biscuit_Stick = 2039,
+        LUK_Biscuit_Stick = 2040,
+        [Description("Acarajé")]
+        ACARAJE = 414,
+
+
+        //BOXES
+        [Description("Caixa da Sonolência")]
+        DROWSINESS_BOX = 151,
+        [Description("Caixa do Ressentimento")]
+        RESENTMENT_BOX = 150,
+        [Description("Caixa da Luz do Sol")]
+        SUNLIGHT_BOX = 184,
+        [Description("Caixa do Trovão")]
+        BOX_OF_THUNDER = 289,
+        [Description("Poção do Vento")]
+        SPEED_POT = 41,
+
+
+        //ELEMENTAL RESISTANCES
+        [Description("Poção Anti-Água")]
+        RESIST_PROPERTY_WATER = 908,
+        [Description("Poção Anti-Terra")]
+        RESIST_PROPERTY_GROUND = 909,
+        [Description("Poção Anti-Fogo")]
+        RESIST_PROPERTY_FIRE = 910,
+        [Description("Poção Anti-Vento")]
+        RESIST_PROPERTY_WIND = 911,
+        
+
+        //SCROLLS
+        [Description("Aumentar Agilidade")]
+        INC_AGI = 12,
+        [Description("Bênção")]
+        BLESSING = 10,
+        [Description("Pergaminho de Esquiva")]
+        FLEE_SCROLL = 247,
+        [Description("Pergaminho de Precisão")]
+        ACCURACY_SCROLL = 248,
+        [Description("Pergaminho do Éden")]
+        EDEN = 9999,
+
+
+        //3RD FOODS
+        STR_3RD_FOOD = 491,
+        INT_3RD_FOOD = 492,
+        VIT_3RD_FOOD = 493,
+        DEX_3RD_FOOD = 494,
+        AGI_3RD_FOOD = 495,
+        LUK_3RD_FOOD = 496,
+
+
+        //Rune Knight Runes
+        //OTHILA = 322,
+        HAGALAZ = 320,
+        THURISAZ = 319,
+        LUX_AMINA = 1154,
+
+
+        //STATUS
+        QUAGMIRE = 8,
+        HALLUCINATIONWALK = 334,
+
+
+        //OTHERS
+        [Description("50% Acima do Peso")]
+        OVERWEIGHT = 35,
+        [Description("Acesso VIP")]
+        VIP_ACCESS = 973,
+        [Description("Anel do Treinador")]
+        COACHS_RING = 2024,
+        [Description("Anti-Bot")]
+        ANTI_BOT = 5020,
+        [Description("Botas de Atlas")]
+        ATLAS_BOOTS = 2031,
+        [Description("Flecha Dourada")]
+        GOLDEN_ARROW = 695,
+        [Description("Força Heróica")]
+        HEROIC_FORCE = 5060,
+        [Description("Goma de Mascar")]
+        CASH_RECEIVEITEM = 252,
+        [Description("Instância Competitiva")]
+        COMPETITIVE_INSTANCE = 5019,
+        [Description("Manual de Combate")]
+        CASH_PLUSEXP = 1400,
+        [Description("Manual de Combate de Classe")]
+        CASH_PLUSECLASSXP = 312,
+        [Description("Rédeas")]
+        RIDDING = 613,
+        [Description("Relógio Rekenber")]
+        REKENBER_WATCH = 2027,
+        [Description("Sentar")]
+        SIT = 622,
+
+
+        // DEBUFFS
+        [Description("Sangramento")]
+        BLEEDING = 124,
+        [Description("Cegueira")]
+        BLIND = 887,
+        [Description("Incêncio")]
+        BURNING = 881,
+        [Description("Confusão/Caos")]
+        CONFUSION = 886,
+        [Description("Ferimento Crítico")]
+        CRITICALWOUND = 286,
+        [Description("Cristalização")]
+        CRYSTALIZE = 9999, // Verificar o ID correto
+        [Description("Maldição")]
+        CURSE = 884,
+        [Description("Envenenamento Mortal")]
+        DEADLY_POISON = 285,
+        [Description("Diminuir Agilidade")]
+        DECREASE_AGI = 13,
+        [Description("Sono Profundo")]
+        DEEP_SLEEP = 435,
+        [Description("Medo")]
+        FEAR = 891,
+        [Description("Hipotermia")]
+        FREEZING = 351,
+        [Description("Congelamento")]
+        FROZEN = 876,
+        [Description("Alucinação")]
+        HALLUCINATION = 34,
+        [Description("Grito da Mandrágora")]
+        MANDRAGORA = 470,
+        [Description("Envenenamento")]
+        POISON = 883,
+        [Description("Silêncio")]
+        SILENCE = 885,
+        [Description("Sono")]
+        SLEEP = 878,
+        [Description("Conjuração Lenta")]
+        SLOW_CAST = 282,
+        [Description("Petrificação")]
+        STONE = 875,
+        [Description("Atordoamento")]
+        STUN = 877,
+        [Description("Zumbificação")]
+        UNDEAD = 97,
+
+
+        // Pergaminhos Cheffenia
+        [Description("Pergaminho de Ghostring")]
+        GHOSTRING = 302,
+        [Description("Pergaminho de Angeling")]
+        ANGELING = 303,
+        [Description("Pergaminho de Tao Gunka")]
+        TAO_GUNKA = 368,
+        [Description("Pergaminho de Senhor dos Orcs")]
+        SR_ORCS = 371,
+        [Description("Pergaminho de Orc Herói")]
+        ORC_HEROI = 370,
+        [Description("Pergaminho de Abelha Rainha")]
+        ABELHA = 369,
+        
     }
-
 }
-

@@ -1,6 +1,6 @@
 # BSKTools
 
-> Ferramenta de automação para Ragnarok Online — focada no servidor **Ragna Tales**.  
+> Ferramenta de automação para Ragnarok Online - focada no servidor **Ragna Tales**.  
 > Fork do [TalesTools](https://github.com/biancaazuma/TalesTools) com melhorias, novos sistemas e correções de bugs.
 
 ![BSKTools em ação](BSKTools-5.2.1.gif)
@@ -9,7 +9,7 @@
 
 ## Download
 
-Acesse a [página de releases](https://github.com/bsk-iT/TalesTools/releases) e baixe a versão mais recente.
+Acesse a [página de releases](https://github.com/bsk-iT/BSKTools/releases) e baixe a versão mais recente.
 
 Extraia o `.zip` e execute o `BSKTools.exe` **como administrador**.
 
@@ -22,7 +22,7 @@ Extraia o `.zip` e execute o `BSKTools.exe` **como administrador**.
 | **Autopot** | Usa poções de HP/SP automaticamente ao atingir um percentual configurável |
 | **AutoBuff Skills** | Reaplica habilidades de buff automaticamente ao expirarem |
 | **AutoBuff Stuffs** | Reaplica itens consumíveis de buff (comidas, poções, pergaminhos) |
-| **AutoSwitch** | Troca de equipamentos/pets com base em buffs ativos — máquina de estados determinística |
+| **AutoSwitch** | Troca de equipamentos/pets com base em buffs ativos - máquina de estados determinística |
 | **AutoSwitch Heal** | Troca automática para equipamento de cura |
 | **Rédea Automática** | Monta/desmonta automaticamente após percorrer uma quantidade configurável de células |
 | **Macro Song** | Automação de sequências de habilidades de Bardo/Dançarina |
@@ -78,7 +78,7 @@ Na **primeira execução**, o programa gera automaticamente o arquivo `supported
 1. Abra o `supported_servers.json` com qualquer editor de texto (Notepad, VS Code, etc.)
 2. **Para trocar** o servidor existente: altere o `name` (nome do `.exe` do cliente), `description` e os endereços de memória
 3. **Para adicionar** um novo servidor sem remover o atual: adicione um novo objeto dentro do array `[...]`, separado por vírgula
-4. Salve o arquivo e reinicie o BSKTools — o novo servidor aparecerá na lista de seleção
+4. Salve o arquivo e reinicie o BSKTools, o novo servidor aparecerá na lista de seleção
 
 > **Como encontrar os endereços de memória:** use ferramentas como o **Cheat Engine** para encontrar os offsets de HP, nome do personagem, mapa atual e posição X no processo do cliente do seu servidor. Esses valores costumam mudar a cada atualização do cliente do jogo.
 
@@ -111,8 +111,8 @@ Na **primeira execução**, o programa gera automaticamente o arquivo `supported
 
 ## Créditos
 
-- **BSKTools** — fork e melhorias por [bsk-iT](https://github.com/bsk-iT)
-- **TalesTools** — projeto original por [Bianca Azuma](https://github.com/biancaazuma/TalesTools) e [Hannamori](https://livepix.gg/hannamori)
+- **BSKTools** - fork e melhorias por [bsk-iT](https://github.com/bsk-iT)
+- **TalesTools** - projeto original por [Bianca Azuma](https://github.com/biancaazuma/TalesTools)
 - Servidor: [Ragna Tales](https://ragnatales.com.br/)
 
 ---

@@ -6,12 +6,12 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Input;
+using System.Drawing;
 
 namespace _4RTools.Utils
 {
     public class FormUtils
     {
-
         public static void OnKeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             try
@@ -25,13 +25,40 @@ namespace _4RTools.Utils
                 {
                     case Key.Escape:
                     case Key.Back:
-                        textBox.Text = Key.None.ToString();
+                        textBox.Text = "";
                         break;
                     default:
                         textBox.Text = thisk.ToString();
                         break;
                 }
-                textBox.Parent.Focus();
+
+                // Garantir que o texto não fique selecionado após a atribuição
+                try
+                {
+                    textBox.SelectionStart = textBox.Text.Length;
+                    textBox.SelectionLength = 0;
+                    textBox.DeselectAll();
+                }
+                catch { }
+
+                // Remover o foco do TextBox: preferir limpar ActiveControl do Form.
+                try
+                {
+                    var frm = textBox.FindForm();
+                    if (frm != null)
+                    {
+                        frm.ActiveControl = null;
+                    }
+                    else
+                    {
+                        textBox.Parent?.Focus();
+                    }
+                }
+                catch
+                {
+                    try { textBox.Parent?.Focus(); } catch { }
+                }
+
                 e.Handled = true;
             }
             catch { }
@@ -66,7 +93,7 @@ namespace _4RTools.Utils
             foreach (Control c in texts)
             {
                 TextBox textBox = (TextBox)c;
-                textBox.Text = Key.None.ToString();
+                textBox.Text = "";
             }
 
             foreach (Control c in checks)
@@ -92,7 +119,6 @@ namespace _4RTools.Utils
 
         private static void resetCheckboxForm(Control control)
         {
-
             IEnumerable<Control> checks = GetAll(control, typeof(CheckBox));
             IEnumerable<Control> combos = GetAll(control, typeof(ComboBox));
 
@@ -134,20 +160,33 @@ namespace _4RTools.Utils
         {
             resetForm(group);
         }
-
-
     }
+
     public static class EnumExtensions
     {
-        public static string ToDescriptionString(this EffectStatusIDs val)
+    public static string ToDescriptionString(this EffectStatusIDs val)
+    {
+        try
         {
-            DescriptionAttribute[] attributes = (DescriptionAttribute[])val
-               .GetType()
-               .GetField(val.ToString())
-               .GetCustomAttributes(typeof(DescriptionAttribute), false);
-            return attributes.Length > 0 ? attributes[0].Description : string.Empty;
+            FieldInfo field = val.GetType().GetField(val.ToString());
+
+            if (field == null)
+              return val.ToString(); // Retorna o nome do enum se não encontrar o campo
+
+            DescriptionAttribute[] attributes = (DescriptionAttribute[])field
+                .GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            return attributes != null && attributes.Length > 0
+                ? attributes[0].Description
+                : val.ToString(); // Retorna o nome do enum se não tiver descrição
         }
-        public static string GetDescription(this Enum value)
+        catch
+        {
+            return val.ToString(); // Fallback seguro
+        }
+    }
+
+    public static string GetDescription(this Enum value)
         {
             Type type = value.GetType();
             string name = Enum.GetName(type, value);
@@ -170,15 +209,13 @@ namespace _4RTools.Utils
 
         public static EffectStatusIDs ToEffectStatusId(this String val)
         {
-
             EffectStatusIDs t = Enum.GetValues(typeof(EffectStatusIDs))
                 .Cast<EffectStatusIDs>()
                 .FirstOrDefault(v => v.GetDescription() == val);
             return t;
         }
-
-
     }
+
     public static class KeyboardHookHelper
     {
         public static Key PriorityKey { get; set; } = Key.None;
@@ -187,7 +224,6 @@ namespace _4RTools.Utils
         private static DateTime _lastSent = DateTime.MinValue;
         private static bool _wasPressed = false;
         private static readonly object _lock = new object();
-
 
         public static bool HandlePriorityKey()
         {
@@ -214,9 +250,9 @@ namespace _4RTools.Utils
             return isDown;
         }
     }
+
     public static class GlobalVariablesHelper
     {
         public static List<String> CityList { get; set; }
-
     }
 }

@@ -259,6 +259,13 @@
       <DependentUpon>ClientUpdaterForm.cs</DependentUpon>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Compile>
+    <Compile Include="Forms\CommonComboBoxItem.cs" />
+    <Compile Include="Forms\DebugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DebugForm.Designer.cs">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MacroSongForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +286,9 @@
     <Compile Include="Forms\MacroSwitchForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="Forms\DebugForm.resx">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MacroSongForm.resx">
       <DependentUpon>MacroSongForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -394,6 +404,7 @@
     <Compile Include="Model\AHK.cs" />
     <Compile Include="Model\ATKDEFMode.cs" />
     <Compile Include="Model\AutobuffSkill.cs" />
+    <Compile Include="Model\AutoRein.cs" />
     <Compile Include="Model\AutoSwitch.cs" />
     <Compile Include="Model\Autopot.cs" />
     <Compile Include="Model\AutobuffStuff.cs" />
@@ -408,6 +419,7 @@
     <Compile Include="Model\LocalServerManager.cs" />
     <Compile Include="Model\DebuffsRecovery.cs" />
     <Compile Include="Model\StatusRecovery.cs" />
+    <Compile Include="Model\ThemeManager.cs" />
     <!-- <Compile Include="Model\Tracker.cs" /> -->
     <Compile Include="Model\UserPreferences.cs" />
     <Compile Include="Model\Client.cs" />
@@ -420,6 +432,9 @@
     <Compile Include="Forms\AutopotForm.Designer.cs">
       <DependentUpon>AutopotForm.cs</DependentUpon>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Compile>
+    <Compile Include="Model\VerticallyCenteredTextBox.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -468,6 +483,7 @@
     </EmbeddedResource>
     <None Include="4RTools_TemporaryKey.pfx" />
     <None Include="app.manifest" />
+    <None Include="CHANGELOG.md" />
     <None Include="Properties\DataSources\_4RTools.Model.ClientDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -511,6 +527,15 @@
     <None Include="assets\images\boomerang_dagger.png" />
     <None Include="assets\images\element_master.png" />
     <None Include="assets\images\justa.png" />
+    <Content Include="assets\etc\delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\etc\off.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\etc\on.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TalesIcon.ico" />
     <None Include="assets\images\abrasive.gif" />
     <None Include="assets\images\ac_concentration.gif" />
