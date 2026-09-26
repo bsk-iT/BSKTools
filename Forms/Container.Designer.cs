@@ -51,23 +51,13 @@ namespace _4RTools.Forms
             this.tabPageDebug = new System.Windows.Forms.TabPage();
             this.lblProcessName = new System.Windows.Forms.Label();
             this.processCB = new System.Windows.Forms.ComboBox();
-            this.lblLinkDiscord = new System.Windows.Forms.LinkLabel();
-            this.lblLinkGithub = new System.Windows.Forms.LinkLabel();
             this.labelProfile = new System.Windows.Forms.Label();
             this.profileCB = new System.Windows.Forms.ComboBox();
             this.panelFooter = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.livepixLinkLabelBsk = new System.Windows.Forms.LinkLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.livepixLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.websiteLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.panelDiscImage = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCharacterName = new System.Windows.Forms.Label();
             this.characterName = new System.Windows.Forms.Label();
             this.groupBoxSkillTimer = new System.Windows.Forms.GroupBox();
-            this.panelGithubImage = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panelStatus = new System.Windows.Forms.Panel();
             tabsFunction = new System.Windows.Forms.TabControl();
@@ -294,36 +284,6 @@ namespace _4RTools.Forms
             this.processCB.TabIndex = 2;
             this.processCB.SelectedIndexChanged += new System.EventHandler(this.processCB_SelectedIndexChanged);
             // 
-            // lblLinkDiscord
-            // 
-            this.lblLinkDiscord.AutoSize = true;
-            this.lblLinkDiscord.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLinkDiscord.LinkColor = System.Drawing.Color.CornflowerBlue;
-            this.lblLinkDiscord.Location = new System.Drawing.Point(848, 6);
-            this.lblLinkDiscord.Margin = new System.Windows.Forms.Padding(5);
-            this.lblLinkDiscord.Name = "lblLinkDiscord";
-            this.lblLinkDiscord.Size = new System.Drawing.Size(133, 14);
-            this.lblLinkDiscord.TabIndex = 8;
-            this.lblLinkDiscord.TabStop = true;
-            this.lblLinkDiscord.Text = "Discord Ragnatales";
-            this.lblLinkDiscord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLinkDiscord.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLinkDiscord_LinkClicked);
-            // 
-            // lblLinkGithub
-            // 
-            this.lblLinkGithub.AutoSize = true;
-            this.lblLinkGithub.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLinkGithub.LinkColor = System.Drawing.Color.CornflowerBlue;
-            this.lblLinkGithub.Location = new System.Drawing.Point(34, 5);
-            this.lblLinkGithub.Margin = new System.Windows.Forms.Padding(5);
-            this.lblLinkGithub.Name = "lblLinkGithub";
-            this.lblLinkGithub.Size = new System.Drawing.Size(105, 14);
-            this.lblLinkGithub.TabIndex = 9;
-            this.lblLinkGithub.TabStop = true;
-            this.lblLinkGithub.Text = "Github Project";
-            this.lblLinkGithub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLinkGithub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLinkGithub_LinkClicked);
-            // 
             // labelProfile
             // 
             this.labelProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -354,109 +314,11 @@ namespace _4RTools.Forms
             // 
             this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panelFooter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelFooter.Controls.Add(this.panel3);
-            this.panelFooter.Controls.Add(this.livepixLinkLabelBsk);
-            this.panelFooter.Controls.Add(this.panel2);
-            this.panelFooter.Controls.Add(this.livepixLinkLabel);
-            this.panelFooter.Controls.Add(this.websiteLinkLabel);
-            this.panelFooter.Controls.Add(this.panelDiscImage);
-            this.panelFooter.Controls.Add(this.lblLinkGithub);
-            this.panelFooter.Controls.Add(this.panel1);
-            this.panelFooter.Controls.Add(this.lblLinkDiscord);
             this.panelFooter.Location = new System.Drawing.Point(23, 613);
             this.panelFooter.Margin = new System.Windows.Forms.Padding(5);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(981, 25);
             this.panelFooter.TabIndex = 16;
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.panel3.Location = new System.Drawing.Point(394, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(25, 25);
-            this.panel3.TabIndex = 16;
-            // 
-            // livepixLinkLabelBsk
-            // 
-            this.livepixLinkLabelBsk.AutoSize = true;
-            this.livepixLinkLabelBsk.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.livepixLinkLabelBsk.LinkColor = System.Drawing.Color.CornflowerBlue;
-            this.livepixLinkLabelBsk.Location = new System.Drawing.Point(428, 5);
-            this.livepixLinkLabelBsk.Margin = new System.Windows.Forms.Padding(5);
-            this.livepixLinkLabelBsk.Name = "livepixLinkLabelBsk";
-            this.livepixLinkLabelBsk.Size = new System.Drawing.Size(112, 14);
-            this.livepixLinkLabelBsk.TabIndex = 15;
-            this.livepixLinkLabelBsk.TabStop = true;
-            this.livepixLinkLabelBsk.Text = "Livepix Berserk";
-            this.livepixLinkLabelBsk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.livepixLinkLabelBsk.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.livepixLinkLabelBsk_LinkClicked);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.panel2.Location = new System.Drawing.Point(204, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(25, 25);
-            this.panel2.TabIndex = 15;
-            // 
-            // livepixLinkLabel
-            // 
-            this.livepixLinkLabel.AutoSize = true;
-            this.livepixLinkLabel.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.livepixLinkLabel.LinkColor = System.Drawing.Color.CornflowerBlue;
-            this.livepixLinkLabel.Location = new System.Drawing.Point(238, 5);
-            this.livepixLinkLabel.Margin = new System.Windows.Forms.Padding(5);
-            this.livepixLinkLabel.Name = "livepixLinkLabel";
-            this.livepixLinkLabel.Size = new System.Drawing.Size(98, 14);
-            this.livepixLinkLabel.TabIndex = 14;
-            this.livepixLinkLabel.TabStop = true;
-            this.livepixLinkLabel.Text = "Livepix Hanna";
-            this.livepixLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.livepixLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.livepixLinkLabel_LinkClicked);
-            // 
-            // websiteLinkLabel
-            // 
-            this.websiteLinkLabel.AutoSize = true;
-            this.websiteLinkLabel.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.websiteLinkLabel.LinkColor = System.Drawing.Color.CornflowerBlue;
-            this.websiteLinkLabel.Location = new System.Drawing.Point(640, 5);
-            this.websiteLinkLabel.Margin = new System.Windows.Forms.Padding(5);
-            this.websiteLinkLabel.Name = "websiteLinkLabel";
-            this.websiteLinkLabel.Size = new System.Drawing.Size(112, 14);
-            this.websiteLinkLabel.TabIndex = 12;
-            this.websiteLinkLabel.TabStop = true;
-            this.websiteLinkLabel.Text = "Site Ragnatales";
-            this.websiteLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.websiteLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.websiteLinkLabel_LinkClicked);
-            // 
-            // panelDiscImage
-            // 
-            this.panelDiscImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelDiscImage.BackgroundImage")));
-            this.panelDiscImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelDiscImage.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.panelDiscImage.Location = new System.Drawing.Point(814, 0);
-            this.panelDiscImage.Margin = new System.Windows.Forms.Padding(4);
-            this.panelDiscImage.Name = "panelDiscImage";
-            this.panelDiscImage.Size = new System.Drawing.Size(25, 25);
-            this.panelDiscImage.TabIndex = 10;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.panel1.Location = new System.Drawing.Point(606, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(25, 25);
-            this.panel1.TabIndex = 13;
             // 
             // label1
             // 
@@ -502,17 +364,6 @@ namespace _4RTools.Forms
             this.groupBoxSkillTimer.TabIndex = 0;
             this.groupBoxSkillTimer.TabStop = false;
             // 
-            // panelGithubImage
-            // 
-            this.panelGithubImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelGithubImage.BackgroundImage")));
-            this.panelGithubImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelGithubImage.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.panelGithubImage.Location = new System.Drawing.Point(23, 613);
-            this.panelGithubImage.Margin = new System.Windows.Forms.Padding(4);
-            this.panelGithubImage.Name = "panelGithubImage";
-            this.panelGithubImage.Size = new System.Drawing.Size(25, 25);
-            this.panelGithubImage.TabIndex = 11;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -545,7 +396,6 @@ namespace _4RTools.Forms
             this.Controls.Add(this.characterName);
             this.Controls.Add(this.labelProfile);
             this.Controls.Add(this.profileCB);
-            this.Controls.Add(this.panelGithubImage);
             this.Controls.Add(this.lblCharacterName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRefresh);
@@ -578,10 +428,6 @@ namespace _4RTools.Forms
         private System.Windows.Forms.ComboBox processCB;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.TabPage tabPageSpammer;
-        private System.Windows.Forms.LinkLabel lblLinkDiscord;
-        private System.Windows.Forms.LinkLabel lblLinkGithub;
-        private System.Windows.Forms.Panel panelDiscImage;
-        private System.Windows.Forms.Panel panelGithubImage;
         private System.Windows.Forms.Label labelProfile;
         public System.Windows.Forms.ComboBox profileCB;
         private System.Windows.Forms.TabPage tabPageAutobuffSkill;
@@ -592,19 +438,13 @@ namespace _4RTools.Forms
         private TabPage tabPageAutobuffStuff;
         private TabPage tabPageMacroSongs;
         private TabPage atkDef;
-        private LinkLabel websiteLinkLabel;
-        private Panel panel1;
         private TabPage tabPageProfiles;
         private TabPage tabMacroSwitch;
         private TabPage tabPageAutoSwitch;
         //private TabPage tabPageServer;
         private TabPage tabPageDebuffs;
         private TabPage tabConfig;
-        private LinkLabel livepixLinkLabel;
-        private Panel panel2;
         private TabPage tabPageDebug;
-        private Panel panel3;
-        private LinkLabel livepixLinkLabelBsk;
         private TabPage tabPageHome;
         private GroupBox groupBoxSkillTimer;
         private TabPage tabPageAutoSwitchHeal;

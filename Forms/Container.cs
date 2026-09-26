@@ -30,8 +30,8 @@ namespace _4RTools.Forms
             //Container Configuration
             this.IsMdiContainer = true;
 
-            // Aplicar APENAS barra de título escura
-            ApplyDarkTitleBar();
+            // Aplicar barra de título conforme o tema
+            ApplyTitleBar();
 
             //Paint Children Forms 
             frmToggleApplication = SetToggleApplicationStateWindow();
@@ -50,15 +50,16 @@ namespace _4RTools.Forms
             SetAutoSwitchHealWindow();
             SetConfigWindow();
             SetDebugWindow();
+            SetThemeSelector();
 
             // Aplicar barra de título após carregar todos os controles
             this.Load += (sender, e) => {
-                ApplyDarkTitleBar();
+                ApplyTitleBar();
             };
 
             // Aplicar barra de título quando a janela for mostrada pela primeira vez
             this.Shown += (sender, e) => {
-                ThemeManager.ApplyDarkTitleBar(this);
+                ThemeManager.ApplyTitleBar(this);
                 ThemeManager.ApplyDarkMdiClientBackground(this);
             };
 
@@ -70,20 +71,72 @@ namespace _4RTools.Forms
             base.SetVisibleCore(value);
             if (value && this.Handle != IntPtr.Zero)
             {
-                ThemeManager.ApplyDarkTitleBar(this);
+                ThemeManager.ApplyTitleBar(this);
             }
         }
 
         /// <summary>
-        /// Aplica APENAS a barra de título escura - configure cores no Designer
+        /// Aplica a barra de título do tema atual e o fundo do MdiClient
         /// </summary>
-        private void ApplyDarkTitleBar()
+        private void ApplyTitleBar()
         {
-            // Aplicar barra de título escura
-            ThemeManager.ApplyDarkTitleBar(this);
+            ThemeManager.ApplyTitleBar(this);
 
-            // Aplicar fundo escuro ao MdiClient
+            // Aplicar fundo escuro ao MdiClient (o tema claro o remapeia)
             ThemeManager.ApplyDarkMdiClientBackground(this);
+        }
+
+        // Right side of the footer: dark (default) / light theme, remembered next to lastprofile.txt.
+        private void SetThemeSelector()
+        {
+            Label label = new Label
+            {
+                Text = "Tema",
+                AutoSize = true,
+                Dock = DockStyle.Right,
+                Padding = new Padding(8, 5, 16, 0),
+                ForeColor = Color.Gray,
+                Font = new Font("Segoe UI", 8.25F),
+            };
+            ComboBox themeCB = new ComboBox
+            {
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                FlatStyle = FlatStyle.Flat,
+                Font = profileCB.Font,
+                BackColor = profileCB.BackColor,
+                ForeColor = profileCB.ForeColor,
+                Width = 110,
+                Dock = DockStyle.Right,
+            };
+            themeCB.Items.AddRange(new object[] { "Escuro", "Claro" });
+            // Dock=Right lays out the last added control first, so the combo sits at the edge.
+            panelFooter.Controls.Add(label);
+            panelFooter.Controls.Add(themeCB);
+
+            bool light = false;
+            try
+            {
+                light = File.Exists(AppConfig.ThemeFile) && File.ReadAllText(AppConfig.ThemeFile).Trim() == "light";
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Erro ao carregar tema: {ex.Message}");
+            }
+            themeCB.SelectedIndex = light ? 1 : 0;
+            ThemeManager.SetTheme(light, this);
+            themeCB.SelectedIndexChanged += delegate
+            {
+                bool isLight = themeCB.SelectedIndex == 1;
+                ThemeManager.SetTheme(isLight, this);
+                try
+                {
+                    File.WriteAllText(AppConfig.ThemeFile, isLight ? "light" : "dark");
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Erro ao salvar tema: {ex.Message}");
+                }
+            };
         }
 
         public void addform(TabPage tp, Form f)
@@ -129,7 +182,7 @@ namespace _4RTools.Forms
             AutoConnectToRagnaTales();
 
             // Aplicar barra de título após o carregamento completo
-            ApplyDarkTitleBar();
+            ApplyTitleBar();
 
             ThemeManager.ApplyDarkMdiClientBackground(this);
         }
@@ -240,31 +293,6 @@ namespace _4RTools.Forms
             KeyboardHook.Disable();
             subject.Notify(new Utils.Message(MessageCode.TURN_OFF, null));
             Environment.Exit(0);
-        }
-
-        private void lblLinkGithub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(AppConfig.GithubLink);
-        }
-
-        private void lblLinkDiscord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(AppConfig.DiscordLink);
-        }
-
-        private void websiteLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(AppConfig.Website);
-        }
-
-        private void livepixLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://livepix.gg/hannamori");
-        }
-
-        private void livepixLinkLabelBsk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://livepix.gg/theberserk");
         }
 
         private void profileCB_SelectedIndexChanged(object sender, EventArgs e)
